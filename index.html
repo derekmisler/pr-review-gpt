@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="manifest" href="/manifest.json" />
+    <title>PR Review Assistant</title>
+  </head>
+  <body>
+    <main class="flex column">
+      <header class="flex">
+        <h1 id="pr-url"></h1>
+        <span id="status-icon"></span>
+      </header>
+      <nav id="nav" class="flex hidden">
+        <button id="review-btn">Re-review</button>
+        <button id="copy-btn">Copy</button>
+      </nav>
+      <form id="api-key-form" class="hidden flex column">
+        <label
+          >Enter your
+          <a
+            href="https://platform.openai.com/api-keys"
+            target="_blank"
+            rel="noreferrer"
+            >OpenAI API key</a
+          >
+          to get started:</label
+        >
+        <div class="flex">
+          <input
+            type="password"
+            id="api-key-input"
+            name="api-key-input"
+            required
+          />
+          <button type="submit">Save and review</button>
+        </div>
+      </form>
+      <p id="info" class="flex column info"></p>
+      <p id="error" class="flex column error"></p>
+      <section id="result" class="flex column"></section>
+    </main>
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>
